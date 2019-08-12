@@ -1,10 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"encoding/base64"
 	"fmt"
-	"io"
 	"io/ioutil"
+	"log"
 	"os"
 )
 
@@ -17,8 +18,7 @@ func encodeBase64() string {
 	file, err := ioutil.ReadFile(os.Args[1])
 
 	if err != nil {
-		fmt.Println("Can't read file:", os.Args[1])
-		fmt.Println(err)
+		log.Fatalf("Can't read file:", os.Args[1])
 	}
 
 	encode := base64.StdEncoding.EncodeToString(file)
@@ -29,26 +29,24 @@ func encodeBase64() string {
 
 func decodeBase64() {
 
-	// if len(os.Args) < 2 {
-	// 	fmt.Println("You missed file name")
-	// }
+	read, err := ioutil.Read(os.Args[1:])
+	if err != nil {
+		log.Fatalf("Cannot read programm args")
+	}
 
-	// file, err := ioutil.ReadFile(os.Args[1])
+	scanner := bufio.NewScanner(read)
 
-	// if err != nil {
-	// 	fmt.Println("Can't read file:", os.Args[1])
-	// 	fmt.Println(err)
-	// }
+	scanner.Scan()
+	s := scanner.Text()
 
-	s, err := io.Reader(os.Args[1])
-	
-	decode, _ := base64.StdEncoding.DecodeString(s)
+	decode, err := base64.StdEncoding.DecodeString(s)
+	if err != nil {
+		log.Fatalf("Cannot decode input", err)
+	}
 
 	fmt.Println(string(decode))
 }
 
 func main() {
-
-	fmt.Println(decodeBase64)
 
 }
