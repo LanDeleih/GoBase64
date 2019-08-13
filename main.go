@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	cmds := cmd.NewBase64Command(os.Args[1:])
+
+	cmds := cmd.NewBase64Command(os.Stdin)
 
 	if err := cmds.Execute(); err != nil {
 		os.Exit(1)
