@@ -1,24 +1,30 @@
 package cmd
 
 import (
+	"github.com/GoBase64/cmd/decode"
+	"github.com/GoBase64/cmd/encode"
 	"github.com/spf13/cobra"
 )
 
-func RootCmd() {
+//NewBase64Command execute decode or encode function
+func NewBase64Command(command *cobra.Command) {
 
-	var rootCmd = &cobra.Command{
-		Use:   "gobase64",
-		Short: "GoBase64 is a programm for decode/encode file to base64",
-		Long: `Use it when you need decode config files/secrets etc. 
-									  to base64 and using it in k8s`,
+	var encode = &cobra.Command{
+		Use:   "encode",
+		Short: "Encode file to base64",
 		Run: func(cmd *cobra.Command, args []string) {
-		  // Do Stuff Here
+			encode.Base64()
 		},
-	  }
-	  
-	  func Execute() {
-		if err := rootCmd.Execute(); err != nil {
-		  fmt.Println(err)
-		  os.Exit(1)
-		}
+	}
+
+	var decode = &cobra.Command{
+		Use:   "decode",
+		Short: "Decode string from base64",
+		Run: func(cmd *cobra.Command, args []string) {
+			decode.Base64()
+		},
+	}
+	// decode.Base64()
+	// encode.Base64()
+
 }
