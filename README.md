@@ -19,14 +19,14 @@ Available Commands:
 ## Example:
 
 ### Decode
-```
-gobase64 decode MTIzNDU2Nzg5
+
+```gobase64 decode MTIzNDU2Nzg5
 123456789
 ```
 
 ### Encode
-```
-gobase64 encode alertmanager.yaml
+
+```gobase64 encode alertmanager.yaml
 Imdsb2JhbCI6CiAgInJlc29sdmVfdGltZW91dCI6ICI1bSIKInJlY2VpdmVycyI6Ci0gIm5hbWUiOiAibnVsbCIKInJvdXRlIjoKICAiZ3JvdXBfYnkiOgogIC0gImpvYiIKICAiZ3JvdXBfaW50ZXJ2YWwiOiAiNW0iCiAgImdyb3VwX3dhaXQiOiAiMzBzIgogICJyZWNlaXZlciI6ICJudWxsIgogICJyZXBlYXRfaW50ZXJ2YWwiOiAiMTJoIgogICJyb3V0ZXMiOgogIC0gIm1hdGNoIjoKICAgICAgImFsZXJ0bmFtZSI6ICJXYXRjaGRvZyIKICAgICJyZWNlaXZlciI6ICJudWxsIg==
 
 ```
