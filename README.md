@@ -17,12 +17,13 @@ Available Commands:
   -h, --help   help for base64```
 
 ## Example:
+
 ### Decode
 ```
 gobase64 decode MTIzNDU2Nzg5
 123456789
-
 ```
+
 ### Encode
 ```
 gobase64 encode alertmanager.yaml
