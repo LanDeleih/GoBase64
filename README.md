@@ -5,7 +5,6 @@ usage:
 
 ```Use it to decode/encode base64 string or files
 
-## Usage:
   base64 [command]
 
 Available Commands:
