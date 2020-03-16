@@ -1,30 +1,29 @@
-This app will do a simple task. It translate normal text to Base64.
-You can write a config file, encode it in your console and paste in k8s secrets
+This app will do a simple task to translate text into Base64.
 
-usage: 
+Build:<br>
 
-Use it to decode/encode base64 string or files
+``` make build```
 
-  base64 [command]
+Use it to decode/encode base64 string or files:
+
+```
+goBase64 [command]
 
 Available Commands:
   decode      Decode file from base64
   encode      Encode file to base64
   help        Help about any command
-
-## Flags:
+```
+#### Flags:
   -h, --help   help for base64
 
-Example:
+#### Examples:
 
-Decode:
+Decode:<br>
+```./goBase64 decode SGVsbG8tV29ybGQ=```
 
-``gobase64 decode MTIzNDU2Nzg5
+Encode file:<br>
+```goBase64 encode -f example/alertmanager.yaml```
 
-123456789``
-
-Encode:
-
-``gobase64 encode alertmanager.yaml
-
-Imdsb2JhbCI6CiAgInJlc29sdmVfdGltZW91dCI6ICI1bSIKInJlY2VpdmVycyI6Ci0gIm5hbWUiOiAibnVsbCIKInJvdXRlIjoKICAiZ3JvdXBfYnkiOgogIC0gImpvYiIKICAiZ3JvdXBfaW50ZXJ2YWwiOiAiNW0iCiAgImdyb3VwX3dhaXQiOiAiMzBzIgogICJyZWNlaXZlciI6ICJudWxsIgogICJyZXBlYXRfaW50ZXJ2YWwiOiAiMTJoIgogICJyb3V0ZXMiOgogIC0gIm1hdGNoIjoKICAgICAgImFsZXJ0bmFtZSI6ICJXYXRjaGRvZyIKICAgICJyZWNlaXZlciI6ICJudWxsIg==``
+Encode string:<br>
+```goBase64 encode SGVsbG8tV29ybGQ=```

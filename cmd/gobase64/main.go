@@ -3,12 +3,12 @@ package main
 import (
 	"os"
 
-	"github.com/GoBase64/cmd"
+	cmd "github.com/lanDeleih/gobase64/internal/command"
 )
 
 func main() {
 
-	cmds := cmd.NewBase64Command(os.Stdin)
+	cmds := cmd.NewBase64Command()
 
 	if err := cmds.Execute(); err != nil {
 		os.Exit(1)
